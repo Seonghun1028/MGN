@@ -1,0 +1,3 @@
+# ninja log v5
+0	7138	1683622597737196734	/home/csh/csh_ws/src/roi_gd/Visual-Manipulation-Relationship-Network-Pytorch/model/roi_layers/build/temp.linux-x86_64-cpython-38/home/csh/csh_ws/src/roi_gd/Visual-Manipulation-Relationship-Network-Pytorch/model/roi_layers/cpu/ROIAlign_cpu.o	e4042b0aca06be1b
+1	9236	1683622599833197994	/home/csh/csh_ws/src/roi_gd/Visual-Manipulation-Relationship-Network-Pytorch/model/roi_layers/build/temp.linux-x86_64-cpython-38/home/csh/csh_ws/src/roi_gd/Visual-Manipulation-Relationship-Network-Pytorch/model/roi_layers/vision.o	bde3972272373350

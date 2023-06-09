@@ -1,0 +1,7 @@
+build.py
+extroialign.egg-info/PKG-INFO
+extroialign.egg-info/SOURCES.txt
+extroialign.egg-info/dependency_links.txt
+extroialign.egg-info/top_level.txt
+src/roi_align.cpp
+src/roi_align_cuda.cpp

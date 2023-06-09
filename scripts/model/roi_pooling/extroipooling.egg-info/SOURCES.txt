@@ -1,0 +1,7 @@
+build.py
+extroipooling.egg-info/PKG-INFO
+extroipooling.egg-info/SOURCES.txt
+extroipooling.egg-info/dependency_links.txt
+extroipooling.egg-info/top_level.txt
+src/roi_pooling.cpp
+src/roi_pooling_cuda.cpp
