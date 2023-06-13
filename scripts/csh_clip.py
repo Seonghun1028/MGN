@@ -4,6 +4,7 @@ import os
 import cv2
 import glob
 import clip
+import torch
 from PIL import Image
 
 import matplotlib.pyplot as plt
@@ -250,6 +251,8 @@ if __name__ == '__main__':
         text_features = model.encode_text(text_input)
     
     # Compute the similarity between the images and the text
+    image_features /= image_features.norm(dim=-1, keepdim=True)
+    text_features /= text_features.norm(dim=-1, keepdim=True)
     similarity = image_features @ text_features.T
 
     # Convert similarity tensor to numpy
@@ -260,7 +263,7 @@ if __name__ == '__main__':
 
     # Print the scores and file names of images
     for i in range(similarity_np.shape[0]):
-        print(f"Score: {similarity_np[i]}, Image file: {image_files[i]}")
+        print(f"Score: {float(similarity_np[i]):.8f}, Image file: {image_files[i]}")
 
     # Get the index of the most similar image
     max_index = np.argmax(similarity_np)
