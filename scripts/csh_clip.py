@@ -241,7 +241,7 @@ if __name__ == '__main__':
 
     # Prepare the input
     image_input = torch.stack([preprocess(im) for im in images]).to(device)
-    text_query = "Give me a cellphone"
+    text_query = "Give me a knife"
     text_input = clip.tokenize([text_query]).to(device)
 
 
