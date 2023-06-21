@@ -162,6 +162,7 @@ class MGNService:
                 i += 1
                 image_bundle = self.cam.get_image_bundle()
                 rgb_image = image_bundle['rgb']
+                #aligned_depth = image_bundle['aligned_depth']
                 raw_depth = image_bundle['raw_depth']
                 data_batch = self.create_data_batch(rgb_image)
 
@@ -336,14 +337,16 @@ class MGNService:
         # Convert camera to robot angle
 
         yaw = np.arctan2(-(y1-y2), x1-x2)
-        if yaw >= 0:
-            yaw = yaw - pi/2
-        else:
-            yaw = yaw + pi/2
+
+        if yaw >= pi/2:
+            yaw = yaw - pi
+        elif yaw < -pi/2:
+            yaw = yaw + pi
+
         angle = [0, 0, yaw]
         print('Grasp angle: ', angle)
 
-        a = pi/4 + yaw
+        a = pi/4 - yaw
 
         target_angle = [pi, 0, a]
         print('Orientation in Euler: ', target_angle)
