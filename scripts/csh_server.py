@@ -2,7 +2,7 @@
 
 import rospy
 from math import pi
-from grcnn.srv import GraspPrediction, GraspPredictionResponse
+from mgn.srv import GraspPrediction, GraspPredictionResponse
 from tf.transformations import *
 
 import argparse
@@ -351,6 +351,8 @@ class MGNService:
         target_angle = [pi, 0, a]
         print('Orientation in Euler: ', target_angle)
 
+
+##############################################################################################
         ret = GraspPredictionResponse() # bool success 
         ret.success = True
         g = ret.best_grasp 
@@ -368,6 +370,7 @@ class MGNService:
         g.orientation.w = quat[3]
 
         return ret
+##############################################################################################
 
 if __name__ == '__main__':
     rospy.init_node('mgn_service')

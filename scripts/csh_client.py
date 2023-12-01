@@ -11,7 +11,7 @@ import franka_gripper.msg
 import actionlib
 from tf.transformations import *
 
-from grcnn.srv import GraspPrediction #경로 수정
+from mgn.srv import GraspPrediction #경로 수정
 
 
 class PandaOpenLoopGraspController():
